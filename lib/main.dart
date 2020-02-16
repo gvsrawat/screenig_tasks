@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
         barrierDismissible: true,
         barrierLabel: "",
         barrierColor: Colors.grey,
-        transitionDuration: Duration(milliseconds: 150),
+        transitionDuration: Duration(milliseconds: 120),
         transitionBuilder: (context, ag_first, ag_two, widget) {
           return Transform.scale(
               scale: ag_first.value,
@@ -60,6 +60,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(20.0))),
                   child: SingleChildScrollView(
+                    reverse: true,
+                    padding: EdgeInsets.only(
+                        bottom: MediaQuery.of(context).viewInsets.bottom),
+                    physics: AlwaysScrollableScrollPhysics(),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
